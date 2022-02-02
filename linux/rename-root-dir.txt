@@ -1,0 +1,8 @@
+#Rename user / home Linux
+ 
+1.) # cp /etc/group /etc/group_save
+2.) # adduser new_username
+3.) # cp -a /home/old_username/* /home/new_username/
+4.) # chown -R new_username:group /home/new_username
+5.) # userdel old_username
+6.) check in /etc/group_save for old_username and compare with a new_username in /etc/group
