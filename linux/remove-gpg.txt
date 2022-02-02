@@ -1,0 +1,32 @@
+#Remove GPG In Linux
+
+First you need to find the key id of the key you added. Do this by the command:
+ 
+sudo apt-key list
+ 
+It will list all the keys that you have, with each entry looking like this:
+ 
+pub   1024R/B455BEF0 2010-07-29
+uid                  Launchpad clicompanion-nightlies
+ 
+Once you have figured out which key to remove, use the command sudo apt-key del <keyid> where <keyid> is replaced with the actual keyid of the key you want to remove from your keyring.
+ 
+$ sudo apt-key del B455BEF0
+$ apt-key list | grep clicompan
+ 
+=================================
+ 
+On 16.10 the short key id is no longer shown when you use the list command, but it is actually the last 8 characters of the long hex.
+ 
+So for example the key id for the following key
+ 
+/etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
+------------------------------------------------------
+pub   rsa4096 2012-05-11 [SC]
+      8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092 ==> this 8 digits
+uid           [ unknown] Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+ 
+The key id will be EFE21092 ==> this 8 digits
+ 
+Reference:
+https://askubuntu.com/questions/107177/how-can-i-remove-gpg-key-that-i-added-using-apt-key-add
