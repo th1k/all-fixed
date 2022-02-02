@@ -1,0 +1,14 @@
+#Connect Using wpa_supplicant
+
+iwconfig
+iwlist wlan0 scan | grep ESSID
+ifconfig wlan0 up
+iwconfig wlan0 EESID Porn
+iwconfig
+wpa_passhrase
+wpa_passphrase Porn porn12345 > fuck.conf
+ 
+cat fu.conf
+wpa_supplicant -B -wlan0 -cfuck.conf
+ifconfig
+dhclient -v wlan0
