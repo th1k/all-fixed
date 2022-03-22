@@ -1,0 +1,6 @@
+1, Open CMD as Administrator
+2, type in > chkdsk /f d: 
+
+Note: d: is a drive that have a problem.
+
+3, Done
