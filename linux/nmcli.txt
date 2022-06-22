@@ -53,3 +53,5 @@ Note: If there are spaces in the command line, you should use quotes:
 nmcli device wifi connect "my homewifi" password mypass
 
 This will let the shell and nmcli know that this is to be considered as one word.
+
+link: https://www.makeuseof.com/connect-to-wifi-with-nmcli/
