@@ -1,0 +1,55 @@
+#Connect wifi using nmcli (raspberry pi)
+
+I think you want to keep using managed interface (by NetworkManager). nmcli is a command‐line tool for controlling NetworkManager.
+
+To see list of saved connections, use (<SavedWiFiConn>)
+
+nmcli c
+To see list of available WiFi hotspots (<WiFiSSID>)
+
+nmcli d wifi list
+or:
+
+sudo iwlist <WifiInterface> scanning
+To see list of interfaces (<WifiInterface>)
+
+ifconfig -a
+Just change <WifiInterface>, <WiFiSSID>, <WiFiPassword> in the following commands to reflect your setup. If WiFi info already saved, easier way using <SavedWiFiConn> name of connection as it was saved in NetworkManager.
+
+Ubuntu 16.04
+##disconnect
+nmcli d disconnect <WifiInterface>
+
+##connect
+nmcli d connect <WifiInterface>
+Another way:
+
+##disconnect
+nmcli c down <SavedWiFiConn>
+
+##connect
+nmcli c up <SavedWiFiConn>
+Ubuntu 15.10 & previous
+##disconnect
+nmcli d disconnect iface <WifiInterface>
+
+##connect
+nmcli d wifi connect <WiFiSSID> password <WiFiPassword> iface <WifiInterface>
+Another way:
+
+##disconnect:
+nmcli c down id <SavedWiFiConn>
+
+##connect:
+nmcli c up id <SavedWiFiConn>
+If your password isn't automatically recognized type this:
+
+nmcli -a c up <SavedWiFiConn>
+
+link: https://askubuntu.com/questions/461825/how-to-connect-to-wifi-from-the-command-line
+
+Note: If there are spaces in the command line, you should use quotes:
+
+nmcli device wifi connect "my homewifi" password mypass
+
+This will let the shell and nmcli know that this is to be considered as one word.
