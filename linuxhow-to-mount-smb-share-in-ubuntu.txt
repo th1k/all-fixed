@@ -1,0 +1,5 @@
+### How to Mount a SMB Share in Ubuntu
+
+sudo apt install cifs-utils
+sudo mkdir /mnt/share
+sudo mount.cifs //Windows/SharedFolder /mnt/share -o user=account
