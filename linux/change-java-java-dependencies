@@ -1,0 +1,32 @@
+របៀបប្ដូរជំនាន់ Java
+ដំបូងយើងត្រូវទាញយក Java ពីវែបសាយដើមរបស់វាជាមុនសិនដោយប្រើដំណមួយនេះ openjdk17 ឬទាញយកដូចវិធីខាងក្រោម៖
+
+curl -O https://download.java.net/java/GA/jdk17.0.1/2a2082e5a09d4267845be086888add4f/12/GPL/openjdk-17.0.1_linux-x64_bin.tar.gz
+
+ពន្លាឯកសារ JDK
+
+tar xvf openjdk-17.0.1_linux-x64_bin.tar.gz
+
+ប្ដូទីតាំងឯកសារទៅកាន់ថតឯកសារ /opt/
+
+sudo mv jdk-14 /opt/
+
+តម្លើង Java Environment
+
+sudo tee /etc/profile.d/jdk17.sh <<EOF
+export JAVA_HOME=/opt/jdk-17
+export PATH=$JAVA_HOME/bin:$PATH
+EOF
+
+Source ឯកសារ Profile
+
+source /etc/profile.d/jdk14.sh
+បញ្ជាក់ជំនាន់ Java
+
+kali@kali:~$ echo $JAVA_HOME
+/opt/jdk-17
+kali@kali:~$ java -version
+Picked up _JAVA_OPTIONS: -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
+openjdk version "17" 20xx-xx-xx
+OpenJDK Runtime Environment (build 17+35-2724)
+OpenJDK 64-Bit Server VM (build 17+35-2724, mixed mode, sharing)
