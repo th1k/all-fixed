@@ -1,0 +1,13 @@
+I found it! After much research, and trial and error, here is what enabled me to run VMs in VirtualBox on Windows 10 with Windows Subsystem for Linux installed:
+
+In an elevated (admin) cmd.exe or PowerShell, do:
+
+bcdedit /set hypervisorlaunchtype off
+
+and make sure Hyper-V and Windows Sandbox are disabled in Windows Features (which you can get to by entering OptionalFeatures.exe at a command prompt, or via the Control Panel).
+
+Also, Virtualisation options should be enabled in the BIOS, and I think (I don't have time to test right now) that "Virtual Machine Platform" and "Windows Hypervisor Platform" should be enabled.
+
+VirtualBox 6.0.14, Windows Version 10.0.18362.356.
+
+Ref: how-to-get-virtualbox-6-0-and-wsl-working-at-the-same-time
