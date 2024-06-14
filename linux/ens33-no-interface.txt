@@ -1,0 +1,14 @@
+OK, it seems the interface did not "exist".
+
+Add the following line to /etc/network/interfaces:
+
+-> iface ens33 inet dhcp
+
+Switch it on (enable it):
+
+-> sudo ifup ens33
+-> ping google.com
+
+#req install:
+$ sudo apt update
+$ sudo apt install ifupdown net-tools
