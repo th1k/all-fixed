@@ -1,0 +1,39 @@
+Error: "Data directory /var/lib/postgresql/13/main must not be owned by root"
+
+└─$ sudo apt update && sudo apt full-upgrade -y 
+
+[sudo] password for kali: Hit:1 http://kali.download/kali kali-rolling InR
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done 
+1 package can be upgraded. Run 'apt list --upgradable' to see it. 
+Reading package lists... Done 
+Building dependency tree... Done 
+Reading state information... Done 
+Calculating upgrade... Done 
+The following packages were automatically installed and are no longer required: exfat-fuse gstreamer1.0-pulseaudio libidn11 librest-0.7-0 libsoup-gnome2.4-1 
+Use 'sudo apt autoremove' to remove them. 
+The following packages will be upgraded: postgresql-13 1 upgraded, 0 newly installed, 0 to remove and 0 not upgraded. 664 not fully installed or removed. Need to get 0 B/14.7 MB of archives. After this operation, 106 kB of additional disk space will be used. 
+Preconfiguring packages ... Setting up libss2:arm64 (1.46.4-1) ... (Reading database ... 255637 files and directories currently installed.) 
+Preparing to unpack .../postgresql-13_13.4-2_arm64.deb ... invoke-rc.d: could not determine current runlevel 
+Stopping PostgreSQL 13 database server: mainError: Data directory /var/lib/postgresql/13/main must not be owned by root ... failed! failed! 
+invoke-rc.d: initscript postgresql, action "stop" failed. dpkg: warning: old postgresql-13 package pre-removal script subprocess returned error exit status 1 
+dpkg: trying script from the new package instead ... 
+invoke-rc.d: could not determine current runlevel Stopping PostgreSQL 13 database server: main
+Error: Data directory /var/lib/postgresql/13/main must not be owned by root ... failed! failed! invoke-rc.d: initscript postgresql, action "stop" failed. 
+dpkg: error processing archive /var/cache/apt/archives/postgresql-13_13.4-2_arm64.deb (--unpack): new postgresql-13 package pre-removal script subprocess returned error exit status 1 
+Errors were encountered while processing: /var/cache/apt/archives/postgresql-13_13.4-2_arm64.deb 
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+Solution:
+All you need to do is run:
+
+sudo apt update && sudo apt full-upgrade -y 
+Now run this, you HAVE to run these together or it will not work:
+
+rm -rf /var/lib/dpkg/info/postgresql* && dpkg --configure -a
+You need to run this again to upgrade the package
+
+sudo apt update && sudo apt full-upgrade -y
+
+Source: https://unix.stackexchange.com/questions/667805/data-directory-var-lib-postgresql-13-main-must-not-be-owned-by-root
