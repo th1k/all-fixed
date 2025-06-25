@@ -1,0 +1,14 @@
+Windows 11: Remove Keyboard UK
+
+Windows 11: How to Remove extra languages from keyboard layout,Windows 11: How to remove the extra unwanted language keyboard layout on the taskbar, Windows 11: Fix Unable to Delete additional language In language settings, Fix Can't remove a Keyboard layout Language in Windows 11
+Step 1) Use this command- This will remove all languages except US English
+$1 = New-WinUserLanguageList en-US
+Set-WinUserLanguageList $1
+Restart your PC
+Now you can add the language which you want
+Step 2) Use the registry editor
+Create a backup first
+HKEY_USERS\.DEFAULT\Keyboard Layout\Preload
+HKEY_CURRENT_USER\Keyboard Layout\Preload
+
+#https://www.youtube.com/watch?v=2y3Atx2wmD8
