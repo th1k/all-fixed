@@ -11,3 +11,17 @@ tunnels:
     proto: tcp
 
 cmd:> ngrok start --all
+
+########### V3 ############
+
+version: "3"
+agent:
+    authtoken: 2pNn6oWWEWEsdaXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+tunnels:
+  score_api:
+    proto: tcp
+    addr: 4455
+  weather_api:
+    proto: http
+    addr: 8081
