@@ -1,0 +1,13 @@
+C:\Users\user1\AppData\Local\ngrok\ngrok.yml
+
+version: "2"
+authtoken: 2M0cyDmjM4PXXXXXXXXXXXXXXXXXXXXXXXXXXX
+tunnels:
+  first:
+    addr: 8848
+    proto: tcp   
+  second:
+    addr: 4455
+    proto: tcp
+
+cmd:> ngrok start --all
