@@ -1,0 +1,18 @@
+https://superuser.com/questions/894021/where-does-sublime-text-store-its-un-saved-windows
+
+Where does Sublime Text store its un-saved windows?
+
+* Windows
+For the settings folder you could look for a unique file using:
+F:\>dir license.sublime_license /s /b
+
+* Windows 7
+
+- Sublime Text 2:
+C:\Users\user\AppData\Roaming\Sublime Text 2\Settings
+
+- Sublime Text 3:
+C:\Users\user\AppData\Roaming\Sublime Text 3\Local
+
+* Windows 7 64bit, Sublime Text 3 saves its working session (including the contents of tabs that were unsaved when the application was closed) to:
+C:\Users\{username}\AppData\Roaming\Sublime Text 3\Local\Session.sublime_session
