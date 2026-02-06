@@ -1,0 +1,7 @@
+Link > https://iotdriver.qmk.top/
+
+# To pair the Blutooth 
+1, Move button to a bluetooth mode and move the circle button to the bluetooth 1 (don't push it) 
+2, Hold Fn + 1 or 2 or 3
+3, Connect to the keyboard
+4, Done
